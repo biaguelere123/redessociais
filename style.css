@@ -12,7 +12,18 @@ body {
     color: var(--primary-color);
     font-family: var(--font);
     height: 100vh;
-    margin: 0;
+    margin: 0;const getCSS = (variavel) => {
+      const bodyStyles = getComputedStyle(document.body)
+      return bodyStyles.getPropertyValue(variavel)
+  }
+  
+  const tickConfig = {
+      family: getCSS('--font'),
+      size: 16,
+      color: getCSS('--primary-color')
+  }
+  
+  export {getCSS, tickConfig}
   }
 
   header {
